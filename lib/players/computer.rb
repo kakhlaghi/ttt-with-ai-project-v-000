@@ -11,7 +11,7 @@ class Computer < Player
     if !board.taken?(5)
       move = "5"
     
-    elsif board.turn_count == 2
+    elsif board.turn_count == 2 || board.turn_count >5
       move = [1, 3, 7, 9].detect{|i| !board.taken?(i)}.to_s
   
     elsif !board.taken?(rando1) && board.turn_count.odd?
