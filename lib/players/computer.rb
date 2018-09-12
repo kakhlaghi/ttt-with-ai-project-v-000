@@ -7,14 +7,18 @@ class Computer < Player
     move = nil
     if !board.taken?(5)
       move = "5"
-    else board.cells.each.with_index {|cell, index| 
-      if !board.taken?(index+1) 
-      move = "#{index+1}" 
-      end 
-      
-      }
-      move
+  
+    elsif for i in [1,3,7,9]
+        board.cells.each {|cell| 
+          if !board.taken?(i) 
+            move = "#{i}"
+          else
+            move = "#{i+1}"
+          end }
+        end
+        move
     end
+
 end
 end
 end
