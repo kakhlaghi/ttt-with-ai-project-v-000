@@ -8,8 +8,7 @@ class Computer < Player
     if !board.taken?(5)
       move = "5"
     
-    elsif !board.taken?(1) || !board.taken?(3)
-      move = 
+    elsif 
     
     
     elsif board.cells.each.with_index {|cell,index| 
