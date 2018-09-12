@@ -9,6 +9,7 @@ class Computer < Player
       move = "5"
     
     elsif 
+      move = [1, 3, 7, 9].detect{|i| !board.taken?(i)}.to_s
     
     
     elsif board.cells.each.with_index {|cell,index| 
