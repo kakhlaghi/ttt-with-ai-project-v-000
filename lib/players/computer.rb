@@ -8,9 +8,9 @@ class Computer < Player
     if !board.taken?(5)
       move = "5"
   
-    elsif board.cells.each.with_index {|cell,i| 
-          if !board.taken?(i) 
-            move = "#{i}"
+    elsif board.cells.each.with_index {|cell,index| 
+          if !board.taken?(index+1) 
+            move = "#{index+1}"
           end }
         end
         move
