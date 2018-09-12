@@ -5,7 +5,8 @@ class Computer < Player
   
   def move(board)
     sleep(1)
-    rando = rand(9)
+    rando1 = rand(9)
+    rando2 = rand(9)
     move = nil
     if !board.taken?(5)
       move = "5"
@@ -13,8 +14,11 @@ class Computer < Player
     elsif board.turn_count == 2
       move = [1, 3, 7, 9].detect{|i| !board.taken?(i)}.to_s
   
-    elsif !board.taken?(rando)
-      move = rando.to_s
+    elsif !board.taken?(rando1)
+      move = rando1.to_s
+      
+    elsif !board.taken?(rando2)
+      move = rando2.to_s 
     
     elsif board.cells.each.with_index {|cell,index| 
           if !board.taken?(index+1) 
