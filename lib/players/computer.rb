@@ -12,7 +12,6 @@ class Computer < Player
           if !board.taken?(index+1) 
             move = "#{index+1}"
           end }
-        end
         move
     end
 
