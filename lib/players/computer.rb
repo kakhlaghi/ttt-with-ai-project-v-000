@@ -14,10 +14,10 @@ class Computer < Player
     elsif board.turn_count == 2
       move = [1, 3, 7, 9].detect{|i| !board.taken?(i)}.to_s
   
-    elsif !board.taken?(rando1)
+    elsif !board.taken?(rando1) && board.turn_count.odd?
       move = rando1.to_s
       
-    elsif !board.taken?(rando2)
+    elsif !board.taken?(rando2) && board.turn_count.even?
       move = rando2.to_s 
     
     elsif board.cells.each.with_index {|cell,index| 
